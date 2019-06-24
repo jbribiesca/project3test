@@ -49,7 +49,8 @@ class Books extends Component {
       API.saveAppointment({
         title: this.state.title,
         client: this.state.client,
-        member: this.state.member
+        starttime: this.state.starttime,
+        endtime: this.state.endtime
       })
         .then(res => this.loadAppointments())
         .catch(err => console.log(err));
@@ -78,10 +79,14 @@ class Books extends Component {
                 placeholder="Client (required)"
               />
               <TextArea
-                value={this.state.member}
+                value={this.state.starttime}
                 onChange={this.handleInputChange}
-                name="member"
-                placeholder="Member (Optional)"
+                name="starttime"
+              />
+              <TextArea
+                value={this.state.endtime}
+                onChange={this.handleInputChange}
+                name="endtime"
               />
               <FormBtn
                 disabled={!(this.state.client && this.state.title)}
@@ -101,7 +106,7 @@ class Books extends Component {
                   <ListItem key={appointments._id}>
                     <Link to={"/appointments/" + appointments._id}>
                       <strong>
-                      {appointments.title} by {appointments.client} at {moment(appointments.starttime).format("MMMM Do YYYY, h:mm:ss a").toString()}  - {moment(appointments.endtime).format("MMMM Do YYYY, h:mm:ss a").toString()}
+                      {appointments.title} by {appointments.client} at {moment(appointments.starttime).format("MMMM Do YYYY, h:mm a").toString()}  - {moment(appointments.endtime).format("MMMM Do YYYY, h:mm a").toString()}
                       </strong>
                     </Link>
                     <DeleteBtn onClick={() => this.deleteAppointment(appointments._id)} />

@@ -12,8 +12,9 @@ export function Input(props) {
 
 export function TextArea(props) {
   return (
+    
     <div className="form-group">
-      <textarea className="form-control" rows="3" {...props} />
+    <input class="form-control" type="datetime-local" {...props}></input>
     </div>
   );
 }

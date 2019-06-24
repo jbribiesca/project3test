@@ -34,7 +34,7 @@ class Detail extends Component {
             <article>
               <h1>Appointment Detail</h1>
               <p>
-              {moment(this.state.appointment.starttime).format("MMMM Do YYYY, h:mm:ss a").toString()}  - {moment(this.state.appointment.endtime).format("MMMM Do YYYY, h:mm:ss a").toString()}
+              {moment(this.state.appointment.starttime).format("MMMM Do YYYY, h:mm a").toString()}  - {moment(this.state.appointment.endtime).format("MMMM Do YYYY, h:mm a").toString()}
               </p>
             </article>
           </Col>
