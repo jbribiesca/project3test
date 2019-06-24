@@ -32,7 +32,7 @@ class Detail extends Component {
         <Row>
           <Col size="md-10 md-offset-1">
             <article>
-              <h1>Synopsis</h1>
+              <h1>Appointment Detail</h1>
               <p>
               {moment(this.state.appointment.starttime).format("MMMM Do YYYY, h:mm:ss a").toString()}  - {moment(this.state.appointment.endtime).format("MMMM Do YYYY, h:mm:ss a").toString()}
               </p>
@@ -41,7 +41,7 @@ class Detail extends Component {
         </Row>
         <Row>
           <Col size="md-2">
-            <Link to="/">← Back to Authors</Link>
+            <Link to="/">← Back to Appointments</Link>
           </Col>
         </Row>
       </Container>
